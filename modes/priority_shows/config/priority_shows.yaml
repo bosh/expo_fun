@@ -1,0 +1,5 @@
+#config_version=6
+
+mode:
+  start_events: mode_start_priority_shows
+  priority: 9000

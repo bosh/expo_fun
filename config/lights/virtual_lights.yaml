@@ -1,0 +1,21 @@
+#config_version=6
+
+# Lights used in mpf monitor to help debug
+# with no plan to actually wire a light into the physical machine
+
+lights:
+  vlight_ball_1:
+    number: 9502
+    platform: smart_virtual
+    type: rgb
+    tags: lights_virtual
+  vlight_ball_2:
+    number: 9503
+    platform: smart_virtual
+    type: rgb
+    tags: lights_virtual
+  vlight_ball_3:
+    number: 9504
+    platform: smart_virtual
+    type: rgb
+    tags: lights_virtual

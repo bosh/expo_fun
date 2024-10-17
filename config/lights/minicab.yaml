@@ -1,0 +1,138 @@
+#config_version=6
+
+light_settings:
+  default_fade_ms: 40
+
+lights:
+  # EXP String 2 - mini cab
+  l_mini_cab_mini:
+    number: neuron-1-1
+    type: rgb
+    tags: lights_2a, lights_3a, lights_4x, lights_cab
+
+  l_mini_cab_left:
+    number: neuron-1-2
+    type: rgb
+    tags: lights_2b, lights_3b, lights_4x, lights_cab
+
+  l_mini_cab_right:
+    number: neuron-1-3
+    type: rgb
+    tags: lights_2a, lights_3c, lights_4x, lights_cab
+
+# Cobrapin Pop bumpers require manual channeling due to RGBW configuration
+# Don't add more lights after them in a chain
+
+# The pattern appears to be as follows, repeating after 12 channels
+# 0-0 0-1 0-2 1-1
+# 1-2 1-0 2-1 2-0
+# 3-1 2-2 3-0 3-2
+
+# Pattern is RGBGWRWBGBRW
+# Thats, starting from the last available channel, 
+#  R   G   B   W
+# +1, +1, +1, +2
+# +1, -2, +4, -1
+# +4, -2, +1, +2
+# repeat
+
+# For some reason this pattern does not reset at the start of every
+# ring, so each set of 8 starts with the four channel pattern
+# offset by 1 from the previous round
+
+  # Ring A
+  l_pop_ring_a_1:
+    tags: lights_2a, lights_3a, lights_4a, lights_pf, lights_pop_ring_a, lights_pops
+    channels:
+      red:
+        number: neuron-1-4-0 #+1
+      green:
+        number: neuron-1-4-1 #+1
+      blue:
+        number: neuron-1-4-2 #+1
+      white:
+        number: neuron-1-5-1 #+2
+
+  l_pop_ring_a_2:
+    tags: lights_2b, lights_3b, lights_4a, lights_pf, lights_pop_ring_a, lights_pops
+    channels:
+      red:
+        number: neuron-1-5-2 #+1
+      green:
+        number: neuron-1-5-0 #-2
+      blue:
+        number: neuron-1-6-1 #+4
+      white:
+        number: neuron-1-6-0 #-1
+
+  l_pop_ring_a_3:
+    tags: lights_2a, lights_3c, lights_4b, lights_pf, lights_pop_ring_a, lights_pops
+    channels:
+      red:
+        number: neuron-1-7-1 #+4
+      green:
+        number: neuron-1-6-2 #-2
+      blue:
+        number: neuron-1-7-0 #+1
+      white:
+        number: neuron-1-7-2 #+2
+
+  l_pop_ring_a_4:
+    tags: lights_2b, lights_3a, lights_4b, lights_pf, lights_pop_ring_a, lights_pops
+    channels:
+      red:
+        number: neuron-1-8-0 #+1
+      green:
+        number: neuron-1-8-1 #+1
+      blue:
+        number: neuron-1-8-2 #+1
+      white:
+        number: neuron-1-9-1 #+2
+
+  l_pop_ring_a_5:
+    tags: lights_2a, lights_3b, lights_4c, lights_pf, lights_pop_ring_a, lights_pops
+    channels:
+      red:
+        number: neuron-1-9-2 #+1
+      green:
+        number: neuron-1-9-0 #-2
+      blue:
+        number: neuron-1-10-1 #+4
+      white:
+        number: neuron-1-10-0 #-1
+
+  l_pop_ring_a_6:
+    tags: lights_2b, lights_3c, lights_4c, lights_pf, lights_pop_ring_a, lights_pops
+    channels:
+      red:
+        number: neuron-1-11-1 #+4
+      green:
+        number: neuron-1-10-2 #-2
+      blue:
+        number: neuron-1-11-0 #+1
+      white:
+        number: neuron-1-11-2 #+2
+
+  l_pop_ring_a_7:
+    tags: lights_2a, lights_3a, lights_4d, lights_pf, lights_pop_ring_a, lights_pops
+    channels:
+      red:
+        number: neuron-1-12-0 #+1
+      green:
+        number: neuron-1-12-1 #+1
+      blue:
+        number: neuron-1-12-2 #+1
+      white:
+        number: neuron-1-13-1 #+2
+
+  l_pop_ring_a_8:
+    tags: lights_2b, lights_3b, lights_4d, lights_pf, lights_pop_ring_a, lights_pops
+    channels:
+      red:
+        number: neuron-1-13-2 #+1
+      green:
+        number: neuron-1-13-0 #-2
+      blue:
+        number: neuron-1-14-1 #+4
+      white:
+        number: neuron-1-14-0 #-1

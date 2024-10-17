@@ -1,0 +1,27 @@
+#config_version=6
+
+ball_devices:
+  bd_trough:
+    ball_switches: s_trough_ball_1, s_trough_ball_2, s_trough_ball_3, s_trough_ball_4, s_trough_ball_5
+    tags: trough, home, drain
+    eject_coil: c_trough_eject
+    eject_coil_jam_pulse: 15ms
+    jam_switch: s_trough_ball_jam
+    eject_targets: bd_plunger
+    eject_timeouts: 2s
+    debug: true
+
+  bd_plunger:
+    ball_switches: s_plunger
+    mechanical_eject: true
+    eject_timeouts: 2800ms #TODO research making this dynamic so active multiballs trying to add 2+ balls don't slow down, but the default can be 4s+
+    eject_coil: c_auto_plunger
+    player_controlled_eject_event: s_mini_flipper_active
+
+playfields:
+  playfield:
+    default_source_device: bd_plunger
+    tags: default
+    # enable_ball_search: settings.ball_search_enabled == 1
+    enable_ball_search: false
+

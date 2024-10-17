@@ -1,0 +1,28 @@
+#config_version=6
+
+config:
+  - minicab.yaml
+  - virtual_lights.yaml
+
+lights:
+  l_left_outlane:
+    number: 9015
+    type: rgb
+    tags: lights_2a, lights_3c, lights_4a, lights_pf, lights_lanes, lights_outlanes, lights_lower_third
+  l_left_inlane:
+    number: 9016
+    type: rgb
+    tags: lights_2b, lights_3a, lights_4b, lights_pf, lights_lanes, lights_inlanes, lights_lower_third
+  l_right_inlane:
+    number: 9017
+    type: rgb
+    tags: lights_2a, lights_3b, lights_4c, lights_pf, lights_lanes, lights_inlanes, lights_lower_third
+  l_right_outlane:
+    number: 9018
+    type: rgb
+    tags: lights_2b, lights_3c, lights_4d, lights_pf, lights_lanes, lights_outlanes, lights_lower_third
+
+  l_ballsave:
+    number: 9019
+    type: rgb
+    tags: lights_2b, lights_3a, lights_4a, lights_pf, lights_lower_third

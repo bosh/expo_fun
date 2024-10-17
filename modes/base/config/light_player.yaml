@@ -1,0 +1,43 @@
+#config_version=6
+
+show_player:
+  ts_start_button_active_DISABLEDTEMP:
+    light_ring_flash:
+      key: dome_ring_a_menu_flash_x3
+      action: play
+      speed: 2
+      loops: 2
+      show_tokens:
+        lights: lights_dome_ring_a
+        color: orange
+
+light_player:
+  #Minicab left status LED tracking button and EOS
+  "{device.switches.s_left_flipper.state == 0 and device.switches.s_left_flipper_eos.state == 0}":
+    l_mini_cab_left: off
+  "{device.switches.s_left_flipper.state == 1 and device.switches.s_left_flipper_eos.state == 0}":
+    l_mini_cab_left: "000099"
+  "{device.switches.s_left_flipper.state == 0 and device.switches.s_left_flipper_eos.state == 1}":
+    l_mini_cab_left: 990000
+  "{device.switches.s_left_flipper.state == 1 and device.switches.s_left_flipper_eos.state == 1}":
+    l_mini_cab_left: cc00cc
+
+  #Minicab right status LED tracking button and EOS
+  "{device.switches.s_right_flipper.state == 0 and device.switches.s_right_flipper_eos.state == 0}":
+    l_mini_cab_right: off
+  "{device.switches.s_right_flipper.state == 1 and device.switches.s_right_flipper_eos.state == 0}":
+    l_mini_cab_right: "000099"
+  "{device.switches.s_right_flipper.state == 0 and device.switches.s_right_flipper_eos.state == 1}":
+    l_mini_cab_right: 990000
+  "{device.switches.s_right_flipper.state == 1 and device.switches.s_right_flipper_eos.state == 1}":
+    l_mini_cab_right: cc00cc
+
+  #Minicab trough status LED tracking plunger switch and mini flip button
+  "{device.switches.s_plunger.state == 0 and device.switches.s_mini_flipper.state == 0}":
+    l_mini_cab_mini: off
+  "{device.switches.s_plunger.state == 1 and device.switches.s_mini_flipper.state == 0}":
+    l_mini_cab_mini: "009900"
+  "{device.switches.s_plunger.state == 0 and device.switches.s_mini_flipper.state == 1}":
+    l_mini_cab_mini: 990000
+  "{device.switches.s_plunger.state == 1 and device.switches.s_mini_flipper.state == 1}":
+    l_mini_cab_mini: cccc00

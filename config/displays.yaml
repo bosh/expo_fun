@@ -1,0 +1,25 @@
+#config_version=6
+
+bcp:
+  connections:
+    local_display:
+      # port: 5050
+
+window:
+  width: 400
+  height: 1200
+  title: Funhouse EXPO 24!
+  fullscreen: false
+  resizable: false
+  borderless: true
+  exit_on_escape: true
+  no_window: false
+  show_cursor: no
+
+displays:
+  window:
+    width: 400
+    height: 1200
+  display1:
+    width: 400
+    height: 1200
